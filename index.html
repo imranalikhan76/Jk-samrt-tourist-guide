@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J&K Smart Tourist Guide</title>
+<style>
+:root{--site-primary:#164b43;--site-secondary:#dce9df;--site-background:#f5f4ec;--site-on-primary:#ffffff;--site-on-secondary:#183b34;--site-on-background:#172d29;--site-font-body:Arial, sans-serif;--site-font-heading:Georgia,serif;--site-heading-scale:1;--site-spacing-scale:1;--site-radius-scale:1;--site-decoration-opacity:1}
+*{box-sizing:border-box}body{margin:0;background:var(--site-background);color:var(--site-on-background);font-family:var(--site-font-body);line-height:1.55}
+header{background:var(--site-primary);color:white;padding:18px max(5vw,20px);display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.brand{font-family:var(--site-font-heading);font-size:1.3rem;font-weight:bold}.tag{font-size:.8rem;opacity:.85}
+nav{display:flex;gap:16px;flex-wrap:wrap}nav a{color:white;text-decoration:none;font-size:.9rem}
+.hero{min-height:390px;padding:70px max(6vw,22px);background:linear-gradient(90deg,rgba(5,30,27,.83),rgba(5,30,27,.28)),url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20900%20420%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27sky%27%20x2%3D%270%27%20y2%3D%271%27%3E%3Cstop%20stop-color%3D%27%25237db4b0%27/%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%2523e8d7ad%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%27900%27%20height%3D%27420%27%20fill%3D%27url%28%2523sky%29%27/%3E%3Cpath%20d%3D%27M0%20280L180%2085%20310%20250%20490%2055%20700%20285%20820%20130%20900%20235V420H0Z%27%20fill%3D%27%25234c766c%27/%3E%3Cpath%20d%3D%27M0%20325L210%20190%20390%20330%20590%20165%20900%20350V420H0Z%27%20fill%3D%27%25232e5b50%27/%3E%3Cpath%20d%3D%27M0%20355Q180%20315%20350%20360T700%20350T900%20365V420H0Z%27%20fill%3D%27%252395b8a1%27/%3E%3Cpath%20d%3D%27M0%20390Q220%20360%20450%20395T900%20390V420H0Z%27%20fill%3D%27%2523d6c28f%27/%3E%3C/svg%3E') center/cover;color:white;display:flex;align-items:center}
+.hero-inner{max-width:720px}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:.78rem;color:#d7e9d6}.hero h1{font: bold calc(2.8rem * var(--site-heading-scale))/1.08 var(--site-font-heading);margin:12px 0}.hero p{max-width:580px;font-size:1.08rem}
+.search{display:flex;gap:8px;max-width:560px;margin-top:22px}.search input{flex:1;min-width:0;padding:14px;border:0;border-radius:8px}.btn{background:#d4a85d;color:#172d29;border:0;border-radius:8px;padding:12px 17px;font-weight:bold;cursor:pointer}
+main{max-width:1120px;margin:auto;padding:38px 22px}.section-title{font: bold calc(2rem * var(--site-heading-scale)) var(--site-font-heading);margin:0 0 8px}.muted{color:#60736d;margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin:22px 0 38px}.card{background:white;border:1px solid #e2e8df;border-radius:calc(14px * var(--site-radius-scale));overflow:hidden;box-shadow:0 5px 18px #173b3010}.card img{width:100%;height:150px;object-fit:cover;display:block}.card-content{padding:16px}.card h3{margin:0 0 5px;font-family:var(--site-font-heading)}.card p{font-size:.92rem;color:#5c6c66;margin:5px 0 12px}.pill{display:inline-block;background:var(--site-secondary);color:var(--site-on-secondary);padding:4px 9px;border-radius:30px;font-size:.75rem}
+.panel{background:var(--site-secondary);padding:25px;border-radius:14px;margin:25px 0}.panel h2{font-family:var(--site-font-heading);margin-top:0}
+.chatbox{background:white;border:1px solid #dce5dd;border-radius:12px;padding:18px;max-width:760px}.messages{min-height:105px;max-height:260px;overflow:auto;margin-bottom:12px}.bubble{padding:10px 13px;border-radius:10px;margin:8px 0;max-width:90%;background:#eef4ef}.bubble.user{background:#e5eddc;margin-left:auto}.chatrow{display:flex;gap:8px}.chatrow input{flex:1;min-width:0;padding:12px;border:1px solid #cbd8ce;border-radius:8px}
+footer{background:#123d36;color:white;padding:25px;text-align:center;font-size:.85rem}
+@media(max-width:600px){.hero{padding-top:50px;padding-bottom:50px}.hero h1{font-size:2.25rem}.search{flex-direction:column}nav{gap:10px}}
+</style>
+</head>
+<body>
+<header><div><div class="brand">J&K Smart Tourist Guide</div><div class="tag">Discover the beauty of Jammu & Kashmir</div></div><nav><a href="#places">Places</a><a href="#planner">Trip planner</a><a href="#ask">Ask guide</a></nav></header>
+<section class="hero"><div class="hero-inner"><div class="eyebrow">Mountains • Lakes • Heritage</div><h1>Your journey through paradise starts here.</h1><p>Explore destinations, discover local culture and sketch out a memorable Jammu & Kashmir trip with a simple travel guide.</p><div class="search"><input id="placeSearch" placeholder="Search a place, e.g. Gulmarg"><button class="btn" onclick="searchPlaces()">Explore places</button></div></div></section>
+<main>
+<section id="places"><h2 class="section-title">Explore popular destinations</h2><p class="muted">A few well-known places to start planning. Check local conditions and official advisories before travelling.</p><div class="grid" id="placeGrid">
+<article class="card" data-name="srinagar dal lake"><img src="https://images.unsplash.com/photo-1566837497312-7be4e5e2f8e8?auto=format&fit=crop&w=800&q=80" alt="Dal Lake"><div class="card-content"><span class="pill">Kashmir Valley</span><h3>Srinagar</h3><p>Explore Dal Lake, gardens, old-city heritage and local crafts.</p></div></article>
+<article class="card" data-name="gulmarg snow meadow"><img src="https://images.unsplash.com/photo-1581793745862-99력이?auto=format&fit=crop&w=800&q=80" alt="Mountain landscape"><div class="card-content"><span class="pill">Mountain escape</span><h3>Gulmarg</h3><p>Known for alpine scenery, meadows and winter snow.</p></div></article>
+<article class="card" data-name="pahalgam lidder valley"><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80" alt="Mountain lake"><div class="card-content"><span class="pill">Nature</span><h3>Pahalgam</h3><p>A scenic base for valley views, riverside walks and nature.</p></div></article>
+<article class="card" data-name="sonamarg glacier mountains"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" alt="Snowy mountains"><div class="card-content"><span class="pill">High mountains</span><h3>Sonamarg</h3><p>High-altitude landscapes and dramatic mountain scenery.</p></div></article>
+<article class="card" data-name="jammu bahu fort temples"><img src="https://images.unsplash.com/photo-1606293926075-69a00db番?auto=format&fit=crop&w=800&q=80" alt="Historic architecture"><div class="card-content"><span class="pill">Heritage</span><h3>Jammu</h3><p>Discover historic sites, temples, local markets and Dogra heritage.</p></div></article>
+<article class="card" data-name="patnitop jammu pine hills"><img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80" alt="Pine forest"><div class="card-content"><span class="pill">Hill station</span><h3>Patnitop</h3><p>Enjoy forest scenery, open meadows and peaceful mountain views.</p></div></article>
+</div><p id="noResults" hidden>No matching destination found. Try Srinagar, Jammu, Gulmarg, Pahalgam or Sonamarg.</p></section>
+<section id="planner" class="panel"><h2 class="section-title">Simple trip planner</h2><p>Choose a destination and number of days to get a starter itinerary.</p><div class="search"><select id="destination" style="flex:1;padding:13px;border:0;border-radius:8px"><option>Srinagar</option><option>Gulmarg</option><option>Pahalgam</option><option>Jammu</option><option>Patnitop</option><option>Sonamarg</option></select><select id="days" style="padding:13px;border:0;border-radius:8px"><option value="1">1 day</option><option value="2">2 days</option><option value="3">3 days</option></select><button class="btn" onclick="planTrip()">Make plan</button></div><div id="itinerary" aria-live="polite"></div></section>
+<section id="ask"><h2 class="section-title">Ask the tourist guide</h2><p class="muted">Choose English, Urdu or Hindi. The live AI guide will answer travel questions when the secure server and API key are configured.</p><div class="chatbox"><div class="messages" id="messages"><div class="bubble">Hello! I’m your J&K AI travel helper. Ask me about places, seasons, local culture or a trip plan.</div></div><div class="chatrow"><select id="chatLang" aria-label="Chat language" style="padding:12px;border:1px solid #cbd8ce;border-radius:8px"><option value="en">English</option><option value="ur">اردو</option><option value="hi">हिन्दी</option></select><input id="question" placeholder="e.g. What can I see in Srinagar?" onkeydown="if(event.key==='Enter')askGuide()"><button class="btn" onclick="askGuide()">Ask</button></div></div></section>
+</main><footer>J&K Smart Tourist Guide · A travel discovery prototype · Verify transport, weather and access before your journey.</footer>
+<script>
+function searchPlaces(){const q=document.getElementById('placeSearch').value.toLowerCase().trim();let count=0;document.querySelectorAll('#placeGrid .card').forEach(c=>{const show=!q||c.dataset.name.includes(q);c.style.display=show?'':'none';if(show)count++});document.getElementById('noResults').hidden=count!==0}
+function planTrip(){const p=document.getElementById('destination').value,d=+document.getElementById('days').value;const ideas={Srinagar:['Explore Dal Lake and the old city','Visit a Mughal garden and local craft market','Keep an extra day for a relaxed lakeside visit'],Gulmarg:['Enjoy the meadows and mountain views','Check current gondola operations and weather','Allow time for a relaxed nature walk'],Pahalgam:['Explore the town and riverside scenery','Check which nearby valleys are open','Keep time flexible for local conditions'],Jammu:['Explore Bahu Fort and nearby heritage sites','Visit local markets and sample regional food','Choose a nearby day trip after checking travel times'],Patnitop:['Enjoy forest and meadow viewpoints','Explore marked local walking routes','Keep plans flexible for weather'],Sonamarg:['Enjoy the mountain scenery','Check road access and local travel rules','Allow time for a relaxed visit']};let a=ideas[p];document.getElementById('itinerary').innerHTML='<h3>Your '+d+'-day '+p+' starter plan</h3><ol>'+a.slice(0,d).map(x=>'<li>'+x+'</li>').join('')+'</ol><small>Travel conditions can change. Confirm access, weather and transport locally.</small>'}
+async function askGuide(){
+ const input=document.getElementById('question'),q=input.value.trim();
+ if(!q)return;
+ const lang=document.getElementById('chatLang').value;
+ const box=document.getElementById('messages');
+ const userBubble=document.createElement('div');
+ userBubble.className='bubble user'; userBubble.textContent=q; box.appendChild(userBubble);
+ input.value=''; input.disabled=true;
+ const sendButton=document.querySelector('#ask button.btn'); sendButton.disabled=true;
+ const loading=document.createElement('div'); loading.className='bubble'; loading.textContent='AI jawab tayyar kar raha hai...'; box.appendChild(loading); box.scrollTop=box.scrollHeight;
+ try{
+   const history=Array.from(box.querySelectorAll('.bubble')).filter(el=>el!==loading).slice(-10).map(el=>({role:el.classList.contains('user')?'user':'assistant',content:el.textContent}));
+   const response=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:q,language:lang,history})});
+   const data=await response.json();
+   if(!response.ok) throw new Error(data.error||'Server se jawab nahi mila.');
+   loading.textContent=data.reply||'Maazrat, jawab nahi mil saka.';
+   loading.dir=lang==='ur'?'rtl':'ltr';
+ }catch(err){
+   loading.textContent='Live AI abhi connect nahi hua. Server setup aur API key complete karne ke baad dobara try karein. ('+err.message+')';
+ }finally{
+   input.disabled=false; sendButton.disabled=false; input.focus(); box.scrollTop=box.scrollHeight;
+ }
+}
+</script></body></html>
